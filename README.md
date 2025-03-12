@@ -8,15 +8,23 @@ At Snowmountain AI, we wanted to create a universal format that can be used easi
 
 Markdown has already been found inadequate for conversations with AI assistants. While CommonMark or Github-flavored-markdown (GFM) support elements like lists, tables, code blocks and images, AI assistants like ChatGPT or Gemini have found it necessary to extend it for additional abilities.
 
-- Citations
+- Rendered/evaluated code blocks (like mermaid diagrams)
 - LaTeX for math
+- Citations
 - File attachments
 - Charts
-- Collapsible to make documents more legible
-- Rendered/evaluated code blocks (like mermaid diagrams)
+- Collapsibles
 - Popovers
 - Cards
 - Collection of Cards
+
+The idea is to achive better visual presentation while retaining semantic information for easy parsing by humans, programs and LLMs. This requires achieving the right balance between plain markdown and full HTML.
+
+## Approach
+
+We take Github-flavored-markdown as a starting point because it already supports mermaid diagrams and LaTeX for math.
+
+We define the DSL for other custom elements.
 
 ## Examples
 
@@ -53,11 +61,11 @@ $$
 ```
 
 ### Collapsible
-```
+
 <details>
-    <summary></summary>
+    <summary>Heading</summary>
+    More text goes here
 </details>
-```
 
 ### Charts
 
